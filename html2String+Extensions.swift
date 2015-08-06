@@ -1,6 +1,5 @@
 //
 //  html2String+Extensions.swift
-//  trophies.de
 //
 //  Created by HeikoG on 06.08.15.
 //  Copyright © 2015 HeikoG. All rights reserved.
