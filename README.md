@@ -1,5 +1,5 @@
 # html2String
-A String extension to decode HTML entities to string
+A String extension to decode HTML entities to string in Swift 
 
 # License
 
