@@ -1,14 +1,27 @@
 # html2String
-A String extension to decode HTML entities to string in Swift 
+A String extension to decode HTML entities to string in Swift 2.0
 
-# Usage
+## Usage
 
 Import the html2String+Extensions.swift in your project and do the following:
 
-let htmlString = "007&#8482; Legends"
+```swift
+let htmlString = "Fast &amp; Furious&#8482; Showdown"
+
 let plainString = htmlString.stringByDecodingHTMLEntities
+```
+--> Fast &amp; Furious&#8482; Showdown
 
-# License
+or 
 
-html2String+Extensions is under MIT License. Check the license file for more information.
+```swift
+let htmlString = "&#12456;&#12463;&#12473;&#12488;&#12523;&#12540;&#12497;&#12540;&#12474;"
+
+let plainString = htmlString.stringByDecodingHTMLEntities
+```
+---> &#12456;&#12463;&#12473;&#12488;&#12523;&#12540;&#12497;&#12540;&#12474;
+
+## License
+This repository is licensed under the MIT license, more under
+[LICENSE](LICENSE).
 
