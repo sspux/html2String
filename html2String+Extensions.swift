@@ -307,7 +307,7 @@ extension String {
         func decode(entity : String) -> Character? {
             
             if entity.hasPrefix("&#x") || entity.hasPrefix("&#X"){
-                return decodeNumeric(entity.substringFromIndex(entity.startIndex.advancedBy(3)), base: 10)
+                return decodeNumeric(entity.substringFromIndex(entity.startIndex.advancedBy(3)), base: 16)
             } else if entity.hasPrefix("&#") {
                 return decodeNumeric(entity.substringFromIndex(entity.startIndex.advancedBy(2)), base: 10)
             } else {
