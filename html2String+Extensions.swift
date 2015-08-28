@@ -307,9 +307,9 @@ extension String {
         func decode(entity : String) -> Character? {
             
             if entity.hasPrefix("&#x") || entity.hasPrefix("&#X"){
-                return decodeNumeric(entity.substringFromIndex(advance(entity.startIndex, 3)), base: 16)
+                return decodeNumeric(entity.substringFromIndex(entity.startIndex.advancedBy(3)), base: 10)
             } else if entity.hasPrefix("&#") {
-                return decodeNumeric(entity.substringFromIndex(advance(entity.startIndex, 2)), base: 10)
+                return decodeNumeric(entity.substringFromIndex(entity.startIndex.advancedBy(2)), base: 10)
             } else {
                 return characterEntities[entity]
             }
@@ -322,7 +322,7 @@ extension String {
         
         // Find the next '&' and copy the characters preceding it to `result`:
         while let ampRange = self.rangeOfString("&", range: position ..< endIndex) {
-            result.extend(self[position ..< ampRange.startIndex])
+            result.appendContentsOf(self[position ..< ampRange.startIndex])
             position = ampRange.startIndex
             
             // Find the next ';' and copy everything from '&' to ';' into `entity`
@@ -335,7 +335,7 @@ extension String {
                     result.append(decoded)
                 } else {
                     // Invalid entity, copy verbatim:
-                    result.extend(entity)
+                    result.appendContentsOf(entity)
                 }
             } else {
                 // No matching ';'.
