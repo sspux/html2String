@@ -343,7 +343,7 @@ extension String {
             }
         }
         // Copy remaining characters to `result`:
-        result.extend(self[position ..< endIndex])
+        result.appendContentsOf(self[position ..< endIndex])
         return result
     }
 }
